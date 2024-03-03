@@ -1,3 +1,7 @@
+### no ui - you should make it dynamic
+### your employee class inherits a lot of unecccessary properties, are you ok with this?
+
+
 class Robot:
     def __init__(self, main_material, price, cost_to_fix_per_day, name, robot_id, battery_type, animal_type, status="For Sale"):
         self.main_material = main_material
@@ -44,6 +48,7 @@ class RobotPetShop:
         self.robots_in_repair = []
         self.employees = []
 
+    ### is this selling or adding to the inventory? if its adding, why change the balance?
     def add_robot_for_sale(self, robot):
         self.pets_for_sale.append(robot)
         self.balance += robot.price
@@ -87,6 +92,7 @@ class RobotPetShop:
                 print(f"Main Material: {robot.main_material}")
                 print(f"Battery Type: {robot.battery_type}")
                 print(f"Animal Type: {robot.animal_type}")
+                ### good detial to notice
                 if isinstance(robot, Employee):
                     print(f"Daily Salary: ${robot.daily_salary}")
                 else:
@@ -99,6 +105,7 @@ class RobotPetShop:
 
 shop = RobotPetShop()
 
+### dry + magic numbers + hardcoding
 robot1 = Robot("Iron", 100, 10, "RoboDog", 1, "Lithium", "Carnivore")
 robot2 = Robot("Steel", 150, 15, "RoboCat", 2, "Alkaline", "Herbivore")
 
